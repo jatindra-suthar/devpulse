@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --surface-2: #1a1a1a;
+  --surface-3: #242424;
+  --border: #2e2e2e;
+  --text: #e8e8e8;
+  --text-muted: #888888;
+  --text-faint: #555555;
+  --green: #22c55e;
+  --yellow: #eab308;
+  --red: #ef4444;
+  --accent: #6366f1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(99, 102, 241, 0.3); }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-2 text-sm font-medium text-[var(--text-muted)] transition-colors hover:border-[var(--text-faint)] hover:text-[var(--text)];
+  }
+  .input {
+    @apply w-full rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2 text-sm text-[var(--text)] placeholder-[var(--text-faint)] outline-none transition-colors focus:border-indigo-500;
+  }
+  .badge-green {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-green-950 px-2.5 py-0.5 text-xs font-medium text-green-400;
+  }
+  .badge-yellow {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-yellow-950 px-2.5 py-0.5 text-xs font-medium text-yellow-400;
+  }
+  .badge-red {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-red-950 px-2.5 py-0.5 text-xs font-medium text-red-400;
+  }
+}

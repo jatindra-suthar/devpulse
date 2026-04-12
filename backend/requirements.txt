@@ -1,0 +1,29 @@
+fastapi
+uvicorn[standard]
+
+# DB
+sqlalchemy
+alembic
+psycopg2-binary
+
+# Pydantic stack (aligned with FastAPI)
+pydantic
+pydantic-settings
+pydantic[email]
+
+# HTTP / env
+httpx
+python-dotenv
+
+# LangChain ecosystem
+langchain
+langgraph
+langchain-ibm
+ibm-watsonx-ai
+
+# Email
+aiosmtplib
+jinja2
+
+# GitHub
+PyGithub
